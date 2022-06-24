@@ -14,7 +14,27 @@
 * Author URI: https://github.com/NesarAhmedRazon/
 * Text Domain: itprix
 */
+
+namespace ITP;
+
 define(
     'ITPRIX_SYSTEM',
     __FILE__
 );
+require plugin_dir_path(ITPRIX_SYSTEM) . 'core/GenarelSettings.php';
+require plugin_dir_path(ITPRIX_SYSTEM) . 'core/CreatePostType.php';
+require plugin_dir_path(ITPRIX_SYSTEM) . 'core/Exts.php';
+require plugin_dir_path(ITPRIX_SYSTEM) . 'core/EcomSystem.php';
+
+$sets = new GenarelSettings();
+$core = new CreatePostType(
+    [
+        'slug' => 'store',
+        'name' => 'Store',
+        'icon' => 'dashicons-store',
+        'color' => '#F15412',
+        'hover' => '#F77E21',
+    ]
+);
+
+new EcomSystem();

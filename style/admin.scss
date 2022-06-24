@@ -1,0 +1,55 @@
+p {
+  &.submit {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+  }
+}
+.itprix_radio {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1em auto;
+  & .radio_field {
+    display: flex;
+    overflow: hidden;
+    & input {
+      position: absolute !important;
+      clip: rect(0, 0, 0, 0);
+      height: 1px;
+      width: 1px;
+      border: 0;
+      overflow: hidden;
+      &:checked + label {
+        background-color: #eb4d4b;
+        color: #fff;
+        box-shadow: none;
+        &:last-of-type {
+          background-color: #3ba155;
+        }
+      }
+    }
+    & label {
+      background-color: #f0f0f1;
+      color: #1d2366;
+      font-size: 1em;
+      line-height: 1;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-align: center;
+      padding: 0.8em 1.2em;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      box-shadow: inset 0 1px 3px rgb(0 0 0 / 9%), 0 1px rgb(255 255 255 / 10%);
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        cursor: pointer;
+      }
+      &:first-of-type {
+        border-radius: 4px 0 0 4px;
+      }
+      &:last-of-type {
+        border-radius: 0 4px 4px 0;
+      }
+    }
+  }
+}

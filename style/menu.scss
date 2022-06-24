@@ -1,0 +1,14 @@
+#toplevel_page_itprix {
+  & .toplevel_page_itprix {
+    & .wp-menu-image {
+      background-size: 75%;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+[class^="menu-icon-"],
+[class*="menu-icon-"] {
+  transition: background-color 0.3s ease;
+}
