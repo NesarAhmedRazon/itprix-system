@@ -153,15 +153,15 @@ class Exts
 
         $data = new \WP_User($id);
         $ud = get_userdata($id);
-        $fields = ['first_name', 'last_name', 'has_shop', 'user_email'];
+        $fields = ['first_name', 'last_name', 'user_email', 'user_phone', 'has_shop', 'store_name'];
         $nData = [];
 
         foreach ($fields as $field) {
             $k = $field;
             $nData[$k] = $data->$field;
         }
-        $pic_url = esc_url_raw(get_avatar_data($id)['url']);
-        $nData['pic'] = str_replace("\/", "", $pic_url);
+
+        $nData['pic'] = esc_url(get_avatar_data($id)['url']);
 
         return $nData;
     }
