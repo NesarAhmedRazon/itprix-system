@@ -153,16 +153,18 @@ class Exts
 
         $data = new \WP_User($id);
         $ud = get_userdata($id);
-        $fields = ['first_name', 'last_name', 'user_email', 'user_phone', 'has_shop', 'store_name'];
+        $fields = ['first_name', 'last_name', 'user_phone', 'has_shop', 'store_name'];
         $nData = [];
 
-        foreach ($fields as $field) {
-            $k = $field;
-            $nData[$k] = $data->$field;
-        }
-
+        $has_shop = get_user_meta($id, 'has_shop', true);
+        $nData['fname'] = get_user_meta($id, 'first_name', true);
+        $nData['lname'] = get_user_meta($id, 'last_name', true);
+        $nData['user_email'] = $data->user_email;
         $nData['pic'] = esc_url(get_avatar_data($id)['url']);
-
+        $nData['has_shop'] = $has_shop;
+        if ($has_shop == 'yes') {
+            $nData['shop_name'] = get_user_meta($id, 'store_name', true);
+        }
         return $nData;
     }
 }
