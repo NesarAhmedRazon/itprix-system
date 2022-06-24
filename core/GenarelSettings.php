@@ -181,29 +181,3 @@ class GenarelSettings
         return $capabilities;
     }
 }
-
-add_action('personal_options_update', 'update_store_meta');
-add_action('edit_user_profile_update', 'update_store_meta');
-function update_store_meta($user_id)
-{
-    //global $wpdb;
-    $users = new \WP_User(1);
-    $users->remove_role('shop_manager');
-    $users->set_role('customer');
-    if (isset($_POST['has_shop'])) {
-
-        update_user_meta($user_id, 'last_name', $_POST['has_shop']);
-    }
-    // if (!current_user_can('edit_user', get_current_user_id())) {
-    //     return false;
-    // }
-    // if (isset($_POST['has_shop'])) {
-    //     $users->remove_role('customer');
-    //     $users->set_role('editor');
-    //     //do_action('profile_update', $user_id, 'shop_manager');
-    //     update_user_meta($user_id, 'has_shop', $_POST['has_shop']);
-    //     update_user_meta($user_id, 'last_name', $_POST['has_shop']);
-
-    //     //update_user_meta($user_id, 'has_shop', sanitize_text_field(wp_unslash($_POST['has_shop'])));
-    // }
-}
