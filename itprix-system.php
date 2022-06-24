@@ -23,6 +23,8 @@ define(
 );
 require plugin_dir_path(ITPRIX_SYSTEM) . 'core/GenarelSettings.php';
 require plugin_dir_path(ITPRIX_SYSTEM) . 'core/CreatePostType.php';
+require plugin_dir_path(ITPRIX_SYSTEM) . 'core/Exts.php';
+require plugin_dir_path(ITPRIX_SYSTEM) . 'core/EcomSystem.php';
 
 $sets = new GenarelSettings();
 $core = new CreatePostType(
@@ -34,3 +36,5 @@ $core = new CreatePostType(
         'hover' => '#F77E21',
     ]
 );
+
+new EcomSystem();
