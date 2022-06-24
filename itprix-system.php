@@ -8,7 +8,7 @@
 * Plugin URI: https://github.com/NesarAhmedRazon/itprix-system
 * Description: Custome Functions added by ItPrix
 * Author: Nesar Ahmed
-* Version: 0.0.01
+* Version: 0.0.02
 * Elementor tested up to: 3.6.6
 * Elementor Pro tested up to: 3.7.2
 * Author URI: https://github.com/NesarAhmedRazon/
